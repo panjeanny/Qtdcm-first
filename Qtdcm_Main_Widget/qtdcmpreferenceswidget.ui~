@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PreferencesWidget</class>
+ <widget class="QWidget" name="PreferencesWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>529</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QtDcmLocalDicomSettingsWidget" name="localDicomSettingsWidget" native="true"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QtDcmServersDicomSettingsWidget" name="serversDicomSettingsWidget" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtDcmLocalDicomSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtDcmLocalDicomSettingsWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QtDcmServersDicomSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtDcmServersDicomSettingsWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../Resources/qtdcm.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui\
+            network\
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,8 +14,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        qtdcm_fiel_search.cpp
+    qtdcm_file_search.cpp
 
-HEADERS  += qtdcm_fiel_search.h
 
-FORMS    += qtdcm_fiel_search.ui
+
+
+
+HEADERS  += \
+            QtDcmPatient.h \
+    qtdcm_file_search.h
+
+
+FORMS    += \
+    qtdcm_file_search.ui

@@ -17,7 +17,8 @@ SOURCES += main.cpp\
 
 HEADERS  += qtdcm_vorlage.h
 
-FORMS    += qtdcm_vorlage.ui
+FORMS    += qtdcm_vorlage.ui \
+    ../../../Qtdcm/Qtdcm Source code/Gui/qtdcmpreferencesdialog.ui
 
 RESOURCES += \
     ../../resources/qtdcm.qrc \
