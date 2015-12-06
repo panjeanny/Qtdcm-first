@@ -1,0 +1,68 @@
+#ifndef QTDCMMANAGER_H
+#define QTDCMMANAGER_H
+
+#include <QTreeWidget>
+#include <QtCore>
+#include <QtGui>
+#include <QLabel>
+#include <QMessageBox>
+#include <QtNetwork>
+
+#include "QtDcmServer.h"
+
+class rt_pointer;
+class QtDcmServer;
+
+
+class QtDcmManagerPrivate;
+
+
+class QtDcmManager : public QObject
+{
+    Q_OBJECT
+
+public:
+    enum outputdirmode
+    {
+        CUSTOM, DIALOG
+    };
+    
+    
+    
+    
+    
+    QtDcmManager(); //default destructor
+
+    static QtDcmManager* instance(); /*default constructor. Instantiate
+    the internal inters and create the temporary directory.*/
+
+    virtual ~QtDcmManager();
+    
+    void findPatientsDicomdir();
+    void findStudiesDicomdir(QString patientName);
+    void findSeriesDicomdir(QString patientName, QString studyDescription);
+    void findImageDicomdir(QString serieUID);
+    
+    void setrt_pointerWidget(rt_pointer * widget);
+    void setPatientsTreeWidget(QTreeWidget *widget);
+    void setStudiesTreeWidget(QTreeWidget *widget);
+    void setSeriesTreeWidget(QTreeWidget *widget);
+    
+
+
+    void setOutputdirMode(QtDcmManager::outputdirmode mode);
+    QtDcmManager::outputdirmode getOutputdirMode();
+
+    void createTemporaryDirs();
+
+    void deleteTemporaryDirs();
+
+private:
+    static QtDcmManager * _instance;
+    QtDcmManagerPrivate *d;
+
+
+
+};
+
+#endif // QTDCMMANAGER_H
